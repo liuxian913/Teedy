@@ -16,7 +16,11 @@ pipeline {
             }
             post {
                 always {
-                    pmd canRunOnFailed: true, pattern: '**/pmd.xml'
+                     recordIssues(
+                        tools: [pmd(pattern: '**/pmd.xml')],
+                        allowMissingResults: false,
+                        canRunOnFailed: true
+)
                 }
             }
         }
