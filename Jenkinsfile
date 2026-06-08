@@ -21,8 +21,7 @@ pipeline {
                 always {
                     recordIssues(
                         tools: [pmd(pattern: '**/pmd.xml')],
-                        allowMissingResults: false,
-                        canRunOnFailed: true
+                        allowMissingResults: false
                     )
                 }
             }
