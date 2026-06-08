@@ -20,8 +20,7 @@ pipeline {
             post {
                 always {
                     recordIssues(
-                        tools: [pmd(pattern: '**/pmd.xml')],
-                        allowMissingResults: false
+                        tools: [pmd(pattern: '**/pmd.xml')]
                     )
                 }
             }
